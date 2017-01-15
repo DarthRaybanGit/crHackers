@@ -6,34 +6,22 @@ import java.util.List;
 public class Utility {
 
 	public static List<Integer[]> utility (int min, int max) {
-		
-		List<Integer[]> result = new ArrayList<Integer[]>();
-		
-		Integer[] utile = {min, 1};
-		result.add(utile);
-		utile[0] = 1;
-		utile[1] = min;
-		result.add(utile);
-		
-		List<Integer> fattori = fattorizza(min);
-		
-		
-		
-		return result;
-	}
-	
-	private static List<Integer> fattorizza(int n) {
-		List<Integer> fattori = new ArrayList<Integer>();
-		int c = 2;
-		while(n > 1) {
-			if (n%c == 0) {
-				fattori.add(c);
-				n = n / c;
-			}
-			else {
-				c++;
+		List<Integer[]> res = new ArrayList<Integer[]>();
+		for(int i = min; i<=max; i++){
+			for(int j = 1; j<=i; j++){
+				int righe = j;
+				int colonne = i-j+1;
+				
+				while(righe*colonne > i)
+					colonne--;
+				
+				if(righe * colonne == i){
+					Integer a1[] = {righe, colonne};
+					res.add(a1);
+					System.out.println(i + ": " + a1[0] + " " + a1[1]);
+				}	
 			}
 		}
-		return fattori;
+		return res;
 	}
 }
