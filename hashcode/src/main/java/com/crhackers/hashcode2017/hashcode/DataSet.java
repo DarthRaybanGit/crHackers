@@ -19,6 +19,15 @@ public class DataSet {
 		RECT = builder.rect;
 	}
 	
+	
+	public void foo(){
+		for(int i = 0; i<ROW; i++){
+			for(int j = 0; i<COL; j++){
+				
+			}
+		}
+	}
+	
 	private boolean isMushrooms(String el){
 		return el.equalsIgnoreCase("M");
 	}
@@ -30,14 +39,16 @@ public class DataSet {
 	@Override
 	public String toString() {
 		StringBuilder res = new StringBuilder();
+		res.append("- - - - - - HEADER - - - - - - \n");
 		res.append(ROW + " " + COL + " " + L + " " + H + "\n");
+		res.append("- - - - - - PAYLOAD - - - - - - \n");
 		for(String line[]: PIZZA){
 			for(String ch: line){
-				res.append(ch);
+				res.append(ch + " ");
 			}
 			res.append("\n");
 		}
-		res.append(" - - - - - - - \n");
+		res.append(" - - - - - - RECTANGLE - - - - - - \n");
 		res.append("Rectangle: " + RECT.size() + " -> ");
 		for(Integer[] r: RECT){
 			res.append("[" + r[0] + ", " + r[1] + "]");
