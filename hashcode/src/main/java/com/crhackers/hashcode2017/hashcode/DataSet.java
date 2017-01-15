@@ -19,15 +19,6 @@ public class DataSet {
 		RECT = builder.rect;
 	}
 	
-	
-	public void foo(){
-		for(int i = 0; i<ROW; i++){
-			for(int j = 0; i<COL; j++){
-				
-			}
-		}
-	}
-	
 	private boolean isMushrooms(String el){
 		return el.equalsIgnoreCase("M");
 	}
