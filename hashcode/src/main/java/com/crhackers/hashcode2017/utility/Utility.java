@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Utility {
 
-	public static List<Integer> utility (int min, int max) {
+	public static List<Integer[]> utility (int min, int max) {
 		
 		return null;
 	}
